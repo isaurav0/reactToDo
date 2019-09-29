@@ -14,14 +14,24 @@ class App extends Component {
       {
         id: 2, 
         title: "Take out trash",
-        completed: true
+        completed: false
       },
       {
         id: 3, 
         title: "Go fishing",
-        completed: true
+        completed: false
       }
     ]
+  }
+
+  markComplete = (id) =>{
+    // this.state.todos.completed = !this.state.todos.completed
+    console.log(id)
+    this.setState({ todos: this.state.todos.map(sth=>{
+      if(sth.id == id)
+        sth.completed = !sth.completed
+      return sth
+    })})
   }
 
 
@@ -29,7 +39,7 @@ class App extends Component {
     return (
       <div className= 'App'>
         <h1>TODO's</h1><br/>
-        <Todos todos={this.state.todos}/>
+        <Todos todos={this.state.todos} markComplete={this.markComplete}/>
       </div>
     )
   }
