@@ -6,28 +6,38 @@ import Header from './components/layout/Header';
 import AddTodo from './components/AddTodo';
 import uuid from 'uuid';
 import About from './components/pages/About';
-//import axios from 'axios'
+import axios from 'axios';
 
 
 class App extends Component {
   state = {
     todos: [
-      {
-        id: uuid.v4(), 
-        title: "Learn React",
-        completed: false
-      }, 
-      {
-        id: uuid.v4(), 
-        title: "",
-        completed: false
-      },
-      {
-        id: uuid.v4(), 
-        title: "Go fishing",
-        completed: false
-      }
+      // {
+      //   id: uuid.v4(), 
+      //   title: "Build Rest APIs",
+      //   completed: false
+      // },
+      
+      // {
+      //   id: uuid.v4(), 
+      //   title: "Think of ideas for project",
+      //   completed: false
+      // }, 
+      
+      // {
+      //   id: uuid.v4(), 
+      //   title: "Take a chill pill",
+      //   completed: false
+      // }
     ]
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:4000/')
+      .then(response=> {
+        this.setState({todos: response.data})
+        // console.log(response.data)
+      })
   }
 
   markComplete = (id) =>{
@@ -68,7 +78,6 @@ class App extends Component {
             </React.Fragment>
            )}/>
           <Route path='/about' component={About}/>
-
         </div>
       </Router>
     )

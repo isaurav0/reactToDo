@@ -1,0 +1,15 @@
+.headerStyle{
+    background: 'black';
+    text-align: 'center';
+    padding: '30px';
+    margin: '0px';
+    color: 'white';
+}
+
+.headerStyle a{
+    color: 'white';
+}
+
+.headerStyle a:visited{
+    color: 'white';
+}
