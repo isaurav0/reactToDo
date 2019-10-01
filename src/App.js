@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import Todos from './components/Todos';
 import Header from './components/layout/Header';
 import AddTodo from './components/AddTodo';
 import uuid from 'uuid';
+import About from './components/pages/About';
+//import axios from 'axios'
 
 
 class App extends Component {
@@ -11,12 +14,12 @@ class App extends Component {
     todos: [
       {
         id: uuid.v4(), 
-        title: "Code For Kura Haru",
+        title: "Learn React",
         completed: false
       }, 
       {
         id: uuid.v4(), 
-        title: "Take out trash",
+        title: "",
         completed: false
       },
       {
@@ -55,11 +58,19 @@ class App extends Component {
 
   render(){
     return (
-      <div className= 'App'>
-        <Header />
-        <AddTodo addTodo={this.addTodo} />
-        <Todos todos={this.state.todos} markComplete={this.markComplete} delete={this.delete}/>
-      </div>
+      <Router>
+        <div className= 'App'>
+          <Header />
+          <Route exact path='/' render={props=> ( 
+            <React.Fragment>
+              <AddTodo addTodo={this.addTodo} />
+              <Todos todos={this.state.todos} markComplete={this.markComplete} delete={this.delete}/>              
+            </React.Fragment>
+           )}/>
+          <Route path='/about' component={About}/>
+
+        </div>
+      </Router>
     )
   }
 }

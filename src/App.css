@@ -1,9 +1,5 @@
-*{
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-}
-
-.btn:hover{
-    color: red;
+.App{
+    position: absolute;
+    left: 20%;
+    width: 60%;
 }
