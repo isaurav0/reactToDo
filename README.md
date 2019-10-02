@@ -12,7 +12,4 @@ To start backend nodejs server, traverse to directory backend and
 
 **npm start
 
-
-![Alt text]()
-
 <img src="https://github.com/isaurav0/reactToDo/blob/master/public/screen.png" width="200" height="400" />
