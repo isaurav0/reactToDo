@@ -6,11 +6,11 @@ In the project directory, you can run:
 
 To start front-end react server type the following command in current directory
 
-npm start
+**npm start
 
 To start backend nodejs server, traverse to directory backend and 
 
-npm start
+**npm start
 
 
-![Alt text](https://isaurav0/reactToDo/public/screen.png)
+![Alt text](https://github.com/isaurav0/reactToDo/blob/master/public/screen.png)
